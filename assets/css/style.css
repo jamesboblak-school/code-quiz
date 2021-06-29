@@ -5,4 +5,34 @@ html {
   
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+button {
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+#start-button{
+    background-color: green;
+}
+
+#time-button{
+    background-color: blue;
+    color: white;
+}
+
+#stop-button{
+    background-color: red;
 }
