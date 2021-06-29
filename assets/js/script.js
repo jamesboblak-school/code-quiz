@@ -24,7 +24,7 @@ var answersObj = {
     a07 : "Graphic User Interface",
     a08 : "Asynchronous JavaScript And XML",
     a09 : "Structured Query Language",
-    a01 : "GNU’s Not Unix",
+    a10 : "GNU’s Not Unix",
 };
 
 // function startGame {
@@ -33,16 +33,31 @@ var answersObj = {
 // }
 
 function timer() {
+
     document.getElementById("time-button").innerHTML = timeLeft;
-    // console.log("timer test");
+    console.log("timer test");
+
+    var timeleft = 60;
+    var gameTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(gameTimer);
+    document.getElementById("time-button").innerHTML = "Game Over";
+  } else {
+    document.getElementById("time-button").innerHTML = timeleft + " s";
+  }
+  timeleft -= 1;
+}, 1000);
 }
 timer();
 
+
+
 function question1() {
-    document.getElementById("questionBox").innerHTML = questionsObj.q00;
+    document.getElementById("questionBox").innerHTML = questionsObj.q01;
         // console.log("question test");
     document.getElementById("ans-a").innerHTML = answersObj.a00;
     document.getElementById("ans-b").innerHTML = answersObj.a01;
     document.getElementById("ans-c").innerHTML = answersObj.a02;
+    
 }
 question1();
