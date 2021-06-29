@@ -29,25 +29,39 @@ var answersObj = {
 
 // function startGame {
 //     var start = document.getElementById("start-button");
-//     start.addEventListener(click, question1());  
+//     start.addEventListener(click, question1()); 
+
+window.onload = function () {
+    document.getElementById("stop-button").addEventListener("click", breaker);
+    document.getElementById("start-button").addEventListener("click", question1);
+  };
 // }
 
-function timer() {
+function breaker(){
+    console.log("clicked on Stop");
+    document.getElementById("time-button").innerHTML = "Game Over";
+}
 
+function timer() {
+    timeleft = 60;
     document.getElementById("time-button").innerHTML = timeLeft;
     console.log("timer test");
 
-    var timeleft = 60;
+    // Display Game Over when Stop is pressed
+    document.getElementById("stop-button").addEventListener("click", function(){
+        timeLeft = 0})
     var gameTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(gameTimer);
     document.getElementById("time-button").innerHTML = "Game Over";
   } else {
-    document.getElementById("time-button").innerHTML = timeleft + " s";
+    document.getElementById("time-button").innerHTML = timeleft + " seconds";
   }
   timeleft -= 1;
 }, 1000);
-}
+    
+    }
+
 timer();
 
 

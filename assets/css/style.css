@@ -9,11 +9,17 @@ body {
     text-align: center;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#questionBox {
+font-size: 1.8rem;
+background-color: wheat;
+border: yellow;
 }
   
 button {
@@ -24,15 +30,18 @@ button {
     flex-flow: wrap;
 }
 
-#start-button{
+#start-button {
     background-color: green;
+    font-size: 2rem;
 }
 
-#time-button{
+#time-button {
     background-color: blue;
     color: white;
+    font-size: 2rem;
 }
 
 #stop-button{
     background-color: red;
+    font-size: 2rem;
 }
