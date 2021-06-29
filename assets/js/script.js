@@ -40,6 +40,8 @@ window.onload = function () {
 function breaker(){
     console.log("clicked on Stop");
     document.getElementById("time-button").innerHTML = "Game Over";
+    clearInterval(gameTimer);
+    stop();
 }
 
 function timer() {
@@ -62,7 +64,7 @@ function timer() {
     
     }
 
-timer();
+    // timer();
 
 
 
@@ -72,6 +74,6 @@ function question1() {
     document.getElementById("ans-a").innerHTML = answersObj.a00;
     document.getElementById("ans-b").innerHTML = answersObj.a01;
     document.getElementById("ans-c").innerHTML = answersObj.a02;
-    
+    timer();
 }
-question1();
+// question1();
