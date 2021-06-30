@@ -50,7 +50,7 @@ function timer() {
   var gameTimer = setInterval(function () {
     if (quizInProgress === true) {
       timeLeft--;
-      document.getElementById("time-button").innerHTML = timeLeft + "seconds"
+      document.getElementById("time-button").innerHTML = timeLeft + " seconds"
     }
     if (timeLeft <= 0) {
       clearInterval(gameTimer);
@@ -62,15 +62,70 @@ function timer() {
 }
 
 function question1() {
-  document.getElementById("questionBox").innerHTML = questionsObj.q01;
-  // console.log("question test");
+  document.getElementById("questionBox").innerHTML = questionsObj.q00;
   document.getElementById("ans-a").innerHTML = answersObj.a00;
   document.getElementById("ans-b").innerHTML = answersObj.a01;
   document.getElementById("ans-c").innerHTML = answersObj.a02;
   console.log("timeLeft1 = " + timeLeft);
+  document.getElementById("ans-a").addEventListener("click", function(){
+  if (answersObj["a00"]) {
+    score++;
+    console.log("score: " + score);
+   } else (timeLeft -= 5);
   if (quizInProgress === true) {
-    console.log("timeLeft2 = " + timeLeft);
-    timer();
-    console.log("timeLeft4 = " + timeLeft);
+    timer();}
+    question2();
+  })
+}
+function question2() {
+  document.getElementById("questionBox").innerHTML = questionsObj.q01;
+  document.getElementById("ans-a").innerHTML = answersObj.a00;
+  document.getElementById("ans-b").innerHTML = answersObj.a02;
+  document.getElementById("ans-c").innerHTML = answersObj.a01;
+  console.log("timeLeft1 = " + timeLeft);
+  document.getElementById("ans-a").addEventListener("click", function(){
+  if (answersObj["a01"]) {
+    score++;
+    console.log("score: " + score);
+   } else (timeLeft -= 5);
+  if (quizInProgress === true) {
+    // timer();
   }
+    question3();
+  })
+}
+function question3() {
+  document.getElementById("questionBox").innerHTML = questionsObj.q02;
+  document.getElementById("ans-a").innerHTML = answersObj.a03;
+  document.getElementById("ans-b").innerHTML = answersObj.a01;
+  document.getElementById("ans-c").innerHTML = answersObj.a02;
+  console.log("timeLeft1 = " + timeLeft);
+  var ans = 
+  document.getElementById("ans-a").addEventListener("click", function(){
+  if (answersObj["a02"] === true) {
+    score++;}
+    console.log("score: " + score);
+  if (quizInProgress === true) {
+    // timer();
+  }
+    question4();
+  })
+}
+
+function question4() {
+  document.getElementById("questionBox").innerHTML = questionsObj.q03;
+  document.getElementById("ans-a").innerHTML = answersObj.a01;
+  document.getElementById("ans-b").innerHTML = answersObj.a02;
+  document.getElementById("ans-c").innerHTML = answersObj.a03;
+  console.log("timeLeft1 = " + timeLeft);
+  var ans = 
+  document.getElementById("ans-a").addEventListener("click", function(){
+  if (answersObj["a03"] === true) {
+    score++;}
+    console.log("score: " + score);
+  if (quizInProgress === true) {
+    // timer();
+  }
+    question4();
+  })
 }
