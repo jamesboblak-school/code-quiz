@@ -44,6 +44,7 @@ function breaker() {
   document.getElementById("time-button").innerHTML = "Game Over";
   quizInProgress = false;
   console.log("timeLeft = " + timeLeft);
+  document.getElementById("high-scores").innerHTML = initials + " " + score;
 }
 
 function timer() {
