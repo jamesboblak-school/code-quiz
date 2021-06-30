@@ -1,6 +1,7 @@
 var score = 0;
 var timeLeft = 60;
 var quizInProgress = true;
+var initials = "JSB";
 var questionsObj = {
   q00: "What does HTML stand for?",
   q01: "What does CSS stand for?",
@@ -44,7 +45,10 @@ function breaker() {
   document.getElementById("time-button").innerHTML = "Game Over";
   quizInProgress = false;
   console.log("timeLeft = " + timeLeft);
-  document.getElementById("high-scores").innerHTML = initials + " " + score;
+  // localStorage.getItem("score", JSON.parse(score));
+  // localStorage.getItem("initials", JSON.parse(initials));
+  // console.log(initials + " " + score);
+  // document.getElementById("high-scores").innerHTML = initials + " : " + score;
 }
 
 function timer() {
@@ -57,8 +61,14 @@ function timer() {
       clearInterval(gameTimer);
       document.getElementById("time-button").innerHTML = "Game Over";
       localStorage.setItem("score", JSON.stringify(score));
-      prompt("enter your initials: ")
+      var initials = prompt("enter your initials: ");
       localStorage.setItem("initials", JSON.stringify(initials));
+      // localStorage.setItem("score", JSON.stringify(score));
+      localStorage.getItem("score", JSON.parse(score));
+      localStorage.getItem("initials", JSON.parse(initials));
+      console.log(initials + " " + score);
+      document.getElementById("high-scores").innerHTML = initials + " : " + score;
+
       breaker();
     }
   }, 1000);
@@ -94,7 +104,7 @@ function question2() {
     score++;
     console.log("score: " + score);
    } else (timeLeft -= 5);
-   ocument.getElementById("result-box").innerHTML = "Score: " + score;
+   document.getElementById("result-box").innerHTML = "Score: " + score;
   if (quizInProgress === true) {
     // timer();
   }
@@ -113,7 +123,7 @@ function question3() {
     score++;
     console.log("score: " + score);
    } else (timeLeft -= 5);
-   ocument.getElementById("result-box").innerHTML = "Score: " + score;
+   document.getElementById("result-box").innerHTML = "Score: " + score;
   if (quizInProgress === true) {
     // timer();
   }
