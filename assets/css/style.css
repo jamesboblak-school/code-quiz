@@ -1,3 +1,5 @@
+
+/* ********ELEMENTS****** */
 html {
     font-size: 62.5%;  /* 1rem = 10px */
 }
@@ -16,18 +18,39 @@ main {
     align-items: center;
 }
 
-#questionBox {
-font-size: 1.8rem;
-background-color: wheat;
-border: yellow;
-}
-  
 button {
     width: 200px;
     height: 80px;
     text-align: center;
     flex-direction: row;
     flex-flow: wrap;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: rgba(0, 26, 255, 0.212);
+  }
+
+button:active {
+    color: yellow;
+  }
+
+/* ********CLASSES******** */
+
+.answer-bar {
+    display: flex;
+    flex-direction: row;
+    box-shadow: black;
+    
+    
+}
+
+/* ********ID's*********** */
+
+#questionBox {
+font-size: 1.8rem;
+background-color: wheat;
+border: yellow;
 }
 
 #start-button {
@@ -44,4 +67,8 @@ button {
 #stop-button{
     background-color: red;
     font-size: 2rem;
+}
+
+#resultBox {
+    background-color: plum;
 }
