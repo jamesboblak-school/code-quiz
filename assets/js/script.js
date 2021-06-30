@@ -56,6 +56,9 @@ function timer() {
       clearInterval(gameTimer);
       document.getElementById("time-button").innerHTML = "Game Over";
       localStorage.setItem("score", JSON.stringify(score));
+      prompt("enter your initials: ")
+      localStorage.setItem("initials", JSON.stringify(initials));
+      breaker();
     }
   }, 1000);
   console.log("timeLeft3 = " + timeLeft);
